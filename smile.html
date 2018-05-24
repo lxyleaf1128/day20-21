@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE</title>
+	<style>
+		#smile {
+            width: 480px;
+            height: 479px;
+            background: url(erik_ce204002.jpg) no-repeat;
+        }
+	</style>
+</head>
+<body>
+	<div>
+		<div id="smile"></div>
+	</div>
+	<script>
+		(function () {  
+            var div=document.getElementById('smile');
+            var posY=-1;
+            var direction=1;
+            setInterval(()=>{
+                posY-=480*direction;
+                if (posY<-7680||posY>-2) {
+                    direction*=-1;
+                }
+                div.style.backgroundPositionY=`${posY}px`;
+            },100);
+        })();
+	</script>
+</body>
+</html>
