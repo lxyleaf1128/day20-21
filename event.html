@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE ECMAScript</title>
+</head>
+<body onkeydown="enterDisplay()"><!-- 设置一个全局监听的属性，有按键按下之后判断keycode得到按下的是什么按键，做出相应的反应 -->
+	<input id="name" type="text">    
+	<button id="submit-btn">Submit</button>
+	<script>
+		var btn=document.getElementById('submit-btn');
+		btn.onclick=function(){displayName()};
+		function displayName() {
+			console.log(document.getElementById('name').value);
+		}
+		function delName() {
+			document.getElementById('name').value="";
+			// 清空的意思就是把value设为空
+		}
+		function enterDisplay() {
+			if (event.keyCode==13) {
+				displayName();
+			}
+			if (event.keyCode==27) {
+				delName();
+			}
+		}
+	</script>
+</body>
+</html>
